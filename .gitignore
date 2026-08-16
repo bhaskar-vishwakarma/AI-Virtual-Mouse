@@ -179,3 +179,9 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# ===== AI Virtual Mouse Pro =====
+# Runtime output
+data/screenshots/*
+data/recordings/*
+data/logs/*
+!data/*/.gitkeep

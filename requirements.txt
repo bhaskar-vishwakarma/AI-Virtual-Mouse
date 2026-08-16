@@ -1,0 +1,38 @@
+# AI Virtual Mouse Pro v3.0
+#
+# Target interpreter: Python 3.11
+#
+# Python 3.12+ and especially 3.14 have broken MediaPipe for this
+# project before. Create the environment explicitly:
+#
+#     py -3.11 -m venv .venv
+#     .venv\Scripts\activate
+#     pip install -r requirements.txt
+#
+# Verify the install with:
+#
+#     python doctor.py
+
+# --- hand tracking -------------------------------------------------
+# 0.10.21 is the last release verified against the Tasks API usage in
+# core/hand_tracker.py. Do not upgrade without re-testing.
+mediapipe==0.10.21
+
+# mediapipe 0.10.x is not compatible with the numpy 2.x ABI.
+numpy<2.0
+
+# --- camera --------------------------------------------------------
+opencv-python==4.10.0.84
+
+# --- user interface ------------------------------------------------
+PyQt6==6.7.1
+
+# --- operating system input ----------------------------------------
+# pynput sends the actual mouse, keyboard and media key events.
+pynput==1.7.7
+
+# pyautogui is used only for screen size and screen capture.
+pyautogui==0.9.54
+
+# Pillow backs pyautogui's screenshot support.
+Pillow>=9.2.0
